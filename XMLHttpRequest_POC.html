@@ -1,0 +1,18 @@
+<HTML>
+<script>
+function getRequest()
+{
+    var http = new XMLHttpRequest();
+    var url = "http://SITEURL/path";
+    var params = "{}";        
+    http.open("POST", url, false);
+    http.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    http.setRequestHeader("Content-lenth", params.length);
+ //   http.setRequestHeader("Origin", "http://127.0.0.1");
+    http.setRequestHeader("Connection", "close");
+    http.send();
+}
+ getRequest();
+</script>
+<body></body>
+</html>
